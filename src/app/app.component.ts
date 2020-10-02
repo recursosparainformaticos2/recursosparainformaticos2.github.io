@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { JokesService } from './services/jokes.service';
-import { IJokeRes } from './interfaces/joke-response.interface';
 
 @Component({
   selector: 'app-root',
@@ -10,20 +8,10 @@ import { IJokeRes } from './interfaces/joke-response.interface';
 export class AppComponent implements OnInit {
   jokes = [];
   isLoading = false;
-  constructor(private jokesService: JokesService) {}
+  constructor() {}
   ngOnInit() {
-    this.getJokes();
+    
   }
 
-  getJokes() {
-    this.isLoading = true;
-    this.jokesService.getJoke()
-      .subscribe((jokeResp: IJokeRes) => {
-        this.isLoading = false;
-        this.jokes[0] = jokeResp.joke;
-      }, (err) => {
-        this.isLoading = false;
-        console.error(err);
-      });
-  }
+
 }

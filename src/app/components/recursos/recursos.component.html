@@ -1,0 +1,19 @@
+<h1>Recursos para <span>Informaticos</span></h1>
+<hr>
+<div class="card-columns">
+
+    <div class="card" *ngFor="let v of [1,1,1,1,1,1,1,1,1,1,1]">
+        <img src="https://static.platzi.com/media/courses/og-html-css.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Curso de HTML y CSS</h5>
+            <p class="card-text">Aprende a crear sitios web con HTML y CSS. Profundiza en el desarrollo y personalización de páginas web navegables, intuitivas y a la medida de tus necesidades. Crea tus primeros proyectos con Platzi.</p>
+            <button type="button" class="btn btn-primary btn-block"> Abrir</button>
+            <hr>
+            <a class="tag" *ngFor="let genre of genre">
+                        {{genre}}
+                    </a>
+            <p class="card-text">02/10/2020</p>
+        </div>
+    </div>
+
+</div>

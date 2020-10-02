@@ -9,14 +9,25 @@
 // .card-title {
 //     font-size: xx-large;
 // }
-.card-img {
+.jumbotron {
+    background-image: url("../../../assets/undraw_project_team_lc5a.svg");
+    background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
     // display: block;
     // margin-left: 30%;
     // margin-top: 60px;
     // background: red;
-    background: -webkit-linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
-    background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
-    background-position: left;
+    //  background: -webkit-linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
+    // 
+    //background-color: #cccccc;
+    background-repeat: no-repeat;
+}
+
+.jumbotron h1 {
+    color: white;
+}
+
+.jumbotron p {
+    color: whitesmoke;
 }
 
 // .card-img {
