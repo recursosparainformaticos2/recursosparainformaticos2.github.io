@@ -1,0 +1,37 @@
+// .lead {
+//     font-size: x-large;
+//     position: absolute;
+//     left: 0px;
+//     width: 40%;
+//     // border: 3px solid #73AD21;
+//     padding: 10px;
+// }
+// .card-title {
+//     font-size: xx-large;
+// }
+.card-img {
+    // display: block;
+    // margin-left: 30%;
+    // margin-top: 60px;
+    // background: red;
+    background: -webkit-linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
+    background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
+    background-position: left;
+}
+
+// .card-img {
+//     height: 600px;
+//     width: 100vw;
+//     background: black;
+//     overflow: hidden;
+//     background: #C33764;
+//     //  background-position: left;
+//     //  position: fixed;
+//     /* fallback colour. Make sure this is just one solid colour. */
+//     background: -webkit-linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("../assets/undraw_project_team_lc5a.svg");
+//     background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url("../assets/undraw_project_team_lc5a.svg");
+//     /* The least supported option. */
+// }
+img {
+    object-position: left;
+}
