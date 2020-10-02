@@ -1,41 +1,16 @@
-.jokester {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  &__container {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-    color: #333;
-    padding: 0 1rem 1rem;
-    font-size: 1.4rem;
-    margin: 0;
-    position: relative;
-    &__reload-joke {
-      cursor: pointer;
-      max-width: fit-content;
-      margin: auto;
-      width: 24px;
-      height: 24px;
-      &:hover {
-        svg {
-          path {
-            &:nth-child(2) {
-              fill: #777;
-            }
-          }
-        }
-      }
-      &--loading {
-        animation: rotate-s-loader 0.5s linear infinite;
-      }
-    }
-  }
-}
-
-@keyframes rotate-s-loader {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+// .lead {
+//     font-size: x-large;
+//     position: absolute;
+//     left: 0px;
+//     width: 40%;
+//     // border: 3px solid #73AD21;
+//     padding: 10px;
+// }
+// .card-title {
+//     font-size: xx-large;
+// }
+// .card-img {
+//     display: block;
+//     margin-left: 30%;
+//     margin-top: 60px;
+// }
