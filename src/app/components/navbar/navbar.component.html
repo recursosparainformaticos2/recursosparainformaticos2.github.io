@@ -12,18 +12,38 @@
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/recursos']">Recursos</a>
             </li>
-            <li class="nav-item" routerLinkActive="active" *ngIf="false">
-                <a class="nav-link" [routerLink]="['/agregarrecursos']">Administracion</a>
-            </li>
+
+
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/about']">Acerca de</a>
             </li>
-
-
+            <!-- <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/login']">Iniciar Sesion</a>
+            </li> -->
+            <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Iniciar  Sesion</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/signup" routerLinkActive="active">SignUp</a>
+                </li> -->
+            </ng-container>
+            <ng-template #loggedIn>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/agregarrecursos']">Administracion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer;" (click)="authService.logout()">Cerrar Sesion</a>
+                </li>
+            </ng-template>
         </ul>
+
+        <br>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+
+            <input class="form-control mr-sm-2" type="text" placeholder="Ingrese busquedad">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
         </form>
+
     </div>
 </nav>

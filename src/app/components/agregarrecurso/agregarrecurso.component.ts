@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../../services/data.service";
+import { RootObject,Link } from "../../interfaces/data.interface";
+import { FormGroup, FormControl, FormArray,FormBuilder, Validators } from '@angular/forms';
+import { Data } from 'src/app/models/data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregarrecurso',
@@ -6,10 +11,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agregarrecurso.component.scss']
 })
 export class AgregarrecursoComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  data = {
+    nombre: ' ',
+    imagen: ' ',
+    descripcion: ' ',
+    links: [
+      {Plataforma: 'Telegram', url: ''},
+      {Plataforma: 'Mega', url: ''},
+      {Plataforma: 'Google Drive', url: ''},
+      {Plataforma: 'Mediafire', url: ''}
+    ],
+    etiquetas: ['', '', '', '', '', '']
   }
-
+  constructor(private ds: DataService, private router: Router) {}
+  ngOnInit() {}
+  addrecurso() {
+    console.log(this.data)
+    this.enviarrecurso(this.data);
+  }
+  enviarrecurso(data) {
+    this.ds.postdata(data).subscribe(
+      res => {
+        console.log(res)
+        localStorage.setItem('token', res.token)
+        this.router.navigate(['/recursos'])
+      },
+      err => console.log(err)
+    )
+  }
 }

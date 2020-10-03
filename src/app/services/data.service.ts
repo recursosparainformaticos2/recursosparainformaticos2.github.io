@@ -1,9 +1,46 @@
-import { Injectable } from '@angular/core';
 
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { RootObject,Link } from "../interfaces/data.interface";
+import { Data } from "../models/data";
+// RxJs
+import { Observable } from 'rxjs/internal/Observable';
+import { of } from 'rxjs/internal/observable/of';
+import { catchError, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  selectrecurso:RootObject;
+  urlrecursos = 'https://recursosinformaticos.herokuapp.com/api/recursos'
+  constructor(private http: HttpClient) {}
+  getData() {
+    return this.http.get(this.urlrecursos).pipe(tap(console.log))
+  }
+  getDataId(id): Observable<RootObject>  {
+    const url = `${this.urlrecursos}/${id}`;
+    return this.http.get<RootObject>(url).pipe(
+      tap((_) => console.log(`fetched movie with id=${id}`)),
+      catchError(this.handleError<RootObject>(`getMovie id=${id}`))
+    );
+  }
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.log(`${operation} failed: ${error.message}`);
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+  postdata(data) {
+    return this.http.post<any>(this.urlrecursos  , data)
+  }
+  putdata(data:RootObject) {
+    return this.http.put<any>(this.urlrecursos+"/"+data._id, data)
+  }
+deletedata(id){
+  return this.http.delete(
+    this.urlrecursos+"/" + id
+  );
+}
 
-  constructor() { }
 }
