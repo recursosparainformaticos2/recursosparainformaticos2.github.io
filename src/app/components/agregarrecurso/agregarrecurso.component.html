@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col-md-3 register-left">
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+
             <h3>Bienvenido</h3>
             <p>Gracias por hacer que el conocimiento sea libre!</p>
             <!-- <input type="submit" name="" value="Login"/><br/> -->
@@ -87,7 +88,8 @@
                                 <label for="formtelegramlink ">Link del recurso en MEDIAFIRE</label>
                                 <input type="text " id="formtelegramlink " class="form-control " placeholder="Link Telegram * " value=" " [(ngModel)]="data.links[3].url " />
                             </div>
-                            <input type="submit " class="btnRegister " value="Agregar " (click)="addrecurso() " />
+                            <img src="{{data.imagen}}" alt="" height="100px" width="300px" />
+                            <button type="submit " class="btnRegister " value="Agregar " (click)="addrecurso() ">Agregar</button>
                         </div>
                     </div>
                 </div>

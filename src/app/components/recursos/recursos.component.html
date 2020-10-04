@@ -7,21 +7,24 @@
 </div>
 </label>
 
-<div class="card-columns" *ngIf="loading==false">
-    <div class="card" *ngFor="let data of recursos let i=index">
-        <img src="{{data.imagen}}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{data.nombre}}</h5>
-            <p class="card-text">{{data.descripcion}}</p>
-            <button type="button" class="btn btn-primary btn-block" (click)="abrirdata(i)"> Abrir</button>
-            <hr>
-            <div *ngFor="let genre of data.etiquetas ">
-                <a class="tag" *ngIf="genre!==''">
+<div class="row row-cols-1 row-cols-md-3" *ngIf="loading==false">
+    <div class="col mb-4" *ngFor="let data of recursos let i=index">
+        <div class="card h-100">
+            <img src="{{data.imagen}}" class="card-img-top" alt="img" height="200px">
+            <div class="card-body">
+                <h5 class="card-title">{{data.nombre}}</h5>
+                <p class="card-text">{{data.descripcion.substring(0,80)}}.....</p>
+                <button type="button" class="btn btn-primary btn-block" (click)="abrirdata(i)"> Ver Mas</button>
+                <hr>
+                <div *ngFor="let genre of data.etiquetas ">
+                    <a class="tag" *ngIf="genre!==''">
                     {{genre}} 
                 </a>
+                </div>
+                <!-- <p class="card-text">02/10/2020</p> -->
             </div>
-            <!-- <p class="card-text">02/10/2020</p> -->
         </div>
+
     </div>
 
 </div>
