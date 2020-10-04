@@ -11,6 +11,7 @@ import { AgregarrecursoComponent } from "./components/agregarrecurso/agregarrecu
 import { AboutComponent } from "./components/about/about.component";
 import { AuthGuard } from './guard/auth.guard';
 import { RecursodataComponent } from './components/recursodata/recursodata.component';
+import { BuscarComponent } from './components/buscar/buscar.component';
 // import { HeroListComponent } from './hero-list/hero-list.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 const appRoutes: Routes = [
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     path: 'recurso/:id',
     component: RecursodataComponent,
   },
-  { path: 'editrecurso/:id', component: EditrecursoComponent }
+  { path: 'editrecurso/:id', component: EditrecursoComponent },
+  { path: 'buscar/:termino', component:  BuscarComponent }
 ];
 
 @NgModule({

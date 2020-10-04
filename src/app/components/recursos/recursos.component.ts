@@ -9,6 +9,7 @@ import { RootObject, Link } from "../../interfaces/data.interface";
 })
 export class RecursosComponent implements OnInit {
   recursos: RootObject[] = null;
+  loading=true;
   constructor(
     private ds: DataService,
     private router: Router
@@ -19,7 +20,7 @@ export class RecursosComponent implements OnInit {
     this.ds.getData().subscribe((recursosdata) => {
       this.recursos = recursosdata;
       console.log("this")
-      // this.loading = false;
+     this.loading = false;
       //  this.applyFilter(this.selectedGenre);
       //   this.applyFilter(this.selectedGenre);
     });

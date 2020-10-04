@@ -19,6 +19,8 @@ import { AuthGuard } from './guard/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { RecursodataComponent } from './components/recursodata/recursodata.component';
 import { EditrecursoComponent } from './components/editrecurso/editrecurso.component';
+import { BuscarComponent } from './components/buscar/buscar.component';
+import { FilterPipe } from './pipes/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { EditrecursoComponent } from './components/editrecurso/editrecurso.compo
     LoginComponent,
     RecursodataComponent,
     EditrecursoComponent,
+    BuscarComponent,
+    FilterPipe,
   ],
   imports: [
     ReactiveFormsModule,

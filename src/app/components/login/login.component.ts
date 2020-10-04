@@ -30,7 +30,7 @@ password:""
           localStorage.setItem('token', res.token);
           this.router.navigate(['/agregarrecursos']);
         },
-        err => console.log(err)
+        err => {alert("Las credenciales son incorrectas")}
       )
   }
 }

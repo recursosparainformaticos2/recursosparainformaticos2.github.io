@@ -36,9 +36,10 @@ export class EditrecursoComponent implements OnInit {
  
     this.ds.putdata(this.data).subscribe(
       res => {
-        alert("actualizado");
+       
         console.log(res)
         localStorage.setItem('token', res.token)
+        alert("actualizado");
         this.router.navigate(['/recursos'])
       },
       err => { alert("error");} 

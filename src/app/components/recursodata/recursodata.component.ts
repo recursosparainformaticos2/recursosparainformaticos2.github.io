@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RecursodataComponent implements OnInit {
   @Input()
-  public loading: boolean=false;
+  public loading: boolean=true;
   recurso:RootObject;
   constructor(public authService: AuthService,private router: Router, private activatedRoute: ActivatedRoute,private ds:DataService) { }
 
@@ -19,8 +19,8 @@ export class RecursodataComponent implements OnInit {
     const { id } = this.activatedRoute.snapshot.params;
     this.getRecursoId(id);
   }
-  edit(recurso: RootObject) {
-    this.ds.selectrecurso = recurso;
+  edit() {
+   // this.ds.selectrecurso = recurso;
     this.router.navigate(['/editrecurso', this.recurso._id])
   }
   delete(){
@@ -30,21 +30,11 @@ export class RecursodataComponent implements OnInit {
     })
 
   }
-  // delete() {
-  //   this.ds.deletedata(this.recurso._id).subscribe(
-  //     res => {
-  //       console.log(res)
-  //       localStorage.setItem('token', res.token)
-  //       this.router.navigate(['/recursos'])
-  //     },
-  //     err => console.log(err)
-  //   )
-  // }
   getRecursoId(id: string) {
     this.ds.getDataId(id).subscribe(
       (data) => {
         this.recurso = data;  
-        this.loading=true;  
+        this.loading=false;  
       },
       (err) => (alert("wwwwww"))
     );

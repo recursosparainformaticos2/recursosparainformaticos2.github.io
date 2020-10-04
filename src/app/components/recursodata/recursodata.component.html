@@ -10,9 +10,14 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
     </aside> -->
+    <input type="checkbox" id="check">
+    <label for="check" *ngIf="loading==true">
+      <div class="check-icon">
+</div>
+</label>
 
 
-    <div class="blog" *ngIf="loading==true">
+    <div class="blog" *ngIf="loading==false">
         <div class="conteudo">
             <div class="post-info" *ngFor="let etiueta of recurso.etiquetas let i=index">
                 <a class="tag" *ngIf="etiueta!==''">
@@ -35,10 +40,10 @@
 
     </div>
     <ng-container>
-        <aside>
+        <aside *ngIf="loading==false">
             <div *ngIf="authService.loggedIn(); ">
 
-                <button class="btn btn-outline-success btn-block" (click)="edit(recurso)">Editar Recurso</button>
+                <button class="btn btn-outline-success btn-block" (click)="edit()">Editar Recurso</button>
                 <br>
                 <br>
                 <button class="btn btn-danger btn-block" (click)="delete()">Eliminar Recurso</button>
