@@ -15,9 +15,9 @@
             <p class="card-text">{{data.descripcion}}</p>
             <button type="button" class="btn btn-primary btn-block" (click)="abrirdata(i)"> Abrir</button>
             <hr>
-            <div *ngFor="let genre of data.etiquetas ">
-                <a class="tag" *ngIf="genre!==''">
-                    {{genre}} 
+            <div *ngFor="let etiueta of data.etiquetas " class="contentag">
+                <a class="tag" *ngIf="etiueta!==''" [routerLink]="['/tag',etiueta]">
+                    {{etiueta}} 
                 </a>
             </div>
             <!-- <p class="card-text">02/10/2020</p> -->

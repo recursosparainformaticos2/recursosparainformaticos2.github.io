@@ -21,6 +21,7 @@ import { RecursodataComponent } from './components/recursodata/recursodata.compo
 import { EditrecursoComponent } from './components/editrecurso/editrecurso.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { TagComponent } from './components/tag/tag.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     EditrecursoComponent,
     BuscarComponent,
     FilterPipe,
+    TagComponent,
   ],
   imports: [
     ReactiveFormsModule,

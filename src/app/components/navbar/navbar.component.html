@@ -42,7 +42,7 @@
         <form class="form-inline my-2 my-lg-0">
 
             <!-- <input class="form-control mr-sm-2" type="text" [(ngModel)]="user.email" placeholder="Ingrese busquedad" (keyup.enter)="buscarRecurso()"> -->
-            <input class="form-control mr-sm-2" type="text" [(ngModel)]="user.email" name="first" placeholder="Ingrese busquedad" (keyup.enter)="buscarRecurso()">
+            <input class="form-control mr-sm-2" type="text" [(ngModel)]="user.email" name="first" placeholder="Ingrese busqueda" (keyup.enter)="buscarRecurso()">
             <button [routerLink]="['/buscar/' + user.email]" class="btn btn-secondary my-2 my-sm-0" type="button">Buscar</button>
         </form>
 

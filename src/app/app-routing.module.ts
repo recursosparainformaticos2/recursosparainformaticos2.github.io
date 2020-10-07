@@ -14,6 +14,7 @@ import { RecursodataComponent } from './components/recursodata/recursodata.compo
 import { BuscarComponent } from './components/buscar/buscar.component';
 // import { HeroListComponent } from './hero-list/hero-list.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TagComponent } from "./components/tag/tag.component";
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
    { path: 'recursos', component: RecursosComponent },
@@ -26,6 +27,10 @@ const appRoutes: Routes = [
   {
     path: 'recurso/:id',
     component: RecursodataComponent,
+  },
+  {
+    path: 'tag/:tag',
+    component: TagComponent,
   },
   { path: 'editrecurso/:id', component: EditrecursoComponent },
   { path: 'buscar/:termino', component:  BuscarComponent }

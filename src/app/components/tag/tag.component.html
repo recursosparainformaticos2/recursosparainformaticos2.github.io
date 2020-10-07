@@ -1,5 +1,5 @@
 <h1>
-    Recursos para <span>Informaticos</span></h1>
+    Etiqueta: <span>{{valor}}</span></h1>
 <hr>
 <input type="checkbox" id="check">
 <label for="check" *ngIf="loading==true">
@@ -7,8 +7,8 @@
 </div>
 </label>
 
-<div class="row row-cols-1 row-cols-md-3" *ngIf="loading==false">
-    <div class="col mb-4" *ngFor="let data of recursos let i=index">
+<div class="row row-cols-1 row-cols-md-3" *ngFor="let data of recursos let i=index">
+    <div class="col mb-4" *ngIf="data.etiquetas.indexOf(valor) >=0">
         <div class="card h-100">
             <img src="{{data.imagen}}" class="card-img-top" alt="img" height="200px">
             <div class="card-body">

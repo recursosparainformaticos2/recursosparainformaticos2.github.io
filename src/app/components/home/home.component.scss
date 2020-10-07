@@ -6,14 +6,34 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html,
-body {
-    display: grid;
-    height: 100%;
-    place-items: center;
-    background: #000;
+.jumbotron {
+    padding: 10px;
 }
 
+.btn {
+    padding: 10px;
+    margin-left: 13px;
+    margin-top: 9px;
+    margin-right: 20px;
+    //   width: 44px;
+    //  height: 44px;
+    // padding: 60px;
+    border-radius: 35px;
+}
+
+.btn-fb {
+    background-color: #1976D2;
+}
+
+.btn-tg {
+    background-color: #41B4E6;
+}
+
+.btn-discord {
+    background-color: #A8ADF0;
+}
+
+html,
 label {
     position: relative;
     height: 125px;

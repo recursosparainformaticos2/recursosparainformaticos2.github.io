@@ -1,13 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
-body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: #eee;
-}
-
-a {
-    padding: 0;
-    margin: 0;
+.tag {
+    //  margin-left: 0.5em;
+    //  //  margin-top: 0.10em;
+    color: blue;
+    //  padding: 0.4em;
+    // position: relative;
+    font-weight: 900;
+    text-decoration: none;
+    //   Display: inline-block;
 }
 
 hr {
@@ -150,9 +150,12 @@ nav.menu ul a:hover {
 }
 
 .conteudo img {
-    margin: 0 0 25px -25px;
-    max-width: 650px;
-    min-width: 650px;
+    margin: 0 0 10px -4%;
+    max-width: 108%;
+    min-width: 108%;
+    //margin: 0 0 25px -25px;
+    //  max-width: 650px;
+    //min-width: 650px;
 }
 
 .conteudo h1 {
@@ -229,7 +232,7 @@ nav.menu ul a:hover {
         border: 1px solid #dedede;
     }
     .conteudo img {
-        margin: 0 0 25px -5%;
+        margin: 0 0 15px -5%;
         max-width: 110%;
         min-width: 110%;
     }

@@ -1,12 +1,23 @@
  .tag {
-     margin-left: 0.5em;
-     //  margin-top: 0.10em;
-     background-color: blue;
+     //  margin-left: 0.5em;
+     //  //  margin-top: 0.10em;
      color: white;
-     padding: 0.4em;
+     //  padding: 0.4em;
+     // position: relative;
+     font-weight: 900;
+     text-decoration: none;
+     //   Display: inline-block;
+ }
+ 
+ .contentag {
+     background-color: blue;
      border-radius: 5px;
-     //   position: relative;
-     //  text-decoration: none;
+     display: inline-block;
+     margin-right: 3px;
+     margin-left: 10px;
+     //  padding-left: 2em;
+     margin-top: 5px;
+     //  padding: 4px;
  }
  
  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
