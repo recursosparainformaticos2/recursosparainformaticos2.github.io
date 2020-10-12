@@ -10,11 +10,13 @@ import {RootObject, Link} from '../../interfaces/data.interface'
 export class RecursosComponent implements OnInit {
   recursos: RootObject[] = null
   loading = true
+  num:number;
   constructor(private ds: DataService, private router: Router) {}
 
   ngOnInit() {
     this.ds.getData().subscribe(recursosdata => {
       this.recursos = recursosdata
+      this.num=this.recursos.length;
       console.log('this')
       this.loading = false
       //  this.applyFilter(this.selectedGenre);
