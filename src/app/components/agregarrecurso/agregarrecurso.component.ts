@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
 })
 export class AgregarrecursoComponent implements OnInit {
   data = {
-    nombre: ' ',
+    nombre: '',
     imagen: '',
-    descripcion: ' ',
+    descripcion: '',
     links: [
       {Plataforma: 'Telegram', url: ''},
       {Plataforma: 'Mega', url: ''},
