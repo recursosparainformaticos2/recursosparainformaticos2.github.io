@@ -9,8 +9,9 @@
 </label>
 
 <div class="row row-cols-1 row-cols-md-3" *ngIf="loading==false">
+
     <div class="col mb-4" *ngFor="let data of recursos let i=index">
-        <div class="card h-100">
+        <!-- <div class="card h-100">
             <img src="{{data.imagen}}" class="card-img-top" alt="img" height="200px">
             <div class="card-body">
                 <h5 class="card-title">{{data.nombre}}</h5>
@@ -22,10 +23,29 @@
                     {{etiueta}} 
                 </a>
                 </div>
-                <!-- <p class="card-text">02/10/2020</p> -->
+                <!-- <p class="card-text">02/10/2020</p>
+            </div>
+        </div> -->
+        <div class="card mb-4">
+            <div class="card text-white bg-success mb-3">
+                <img src="{{data.imagen}}" class="card-img-top" alt="img" height="200px">
+                <div class="card-body">
+                    <h4 class="card-title">{{data.nombre}}</h4>
+                    <p class="card-text">{{data.descripcion.substring(0,80)}}.....</p>
+                </div>
+
+            </div>
+
+
+            <div class="toast-body">
+                <a class="card-link" *ngFor="let etiueta of data.etiquetas " [routerLink]="['/tag',etiueta]">
+                    {{etiueta}} </a>
+            </div>
+
+            <div class="card-footer text-muted">
+                <button type="button" class="btn btn-success btn-lg btn-block" (click)="abrirdata(i)"> Ver Mas</button>
             </div>
         </div>
-
     </div>
 
 </div>

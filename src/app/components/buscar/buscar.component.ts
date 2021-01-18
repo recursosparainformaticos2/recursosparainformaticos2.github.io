@@ -10,7 +10,7 @@ import { RootObject, Link } from "../../interfaces/data.interface";
 })
 export class BuscarComponent implements OnInit {
   recursos: RootObject[] = [];
-  recursos2: RootObject[] = null;
+  recursos2: RootObject[] =[] ;
   loading = true;
   valor:string=" ";
   exist=true;
@@ -22,28 +22,25 @@ export class BuscarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+this.activater.params.subscribe(params=>{
+//   this.recursos = this.ds.buscar(params['termino']);
+//   console.log(this.recursos);
+ this.valor = params['termino'];
+   this.loading = false;
     this.ds.getData().subscribe((recursosdata) => {
-      this.recursos = recursosdata;
+      
+      this.recursos2 = recursosdata;
       //console.log("this")
      // this.filtrar();
       //this.loading = false;
       //  this.applyFilter(this.selectedGenre);
       //   this.applyFilter(this.selectedGenre);
-    });
-//     this.loading = false;
- this.activater.params.subscribe(params=>{
-//   this.recursos = this.ds.buscar(params['termino']);
-//   console.log(this.recursos);
- this.valor = params['termino'];
-   this.loading = false;
-// //  alert(params['termino']);
- })
- for (let index = 0; index < this.recursos.length; index++) {
-   let element = this.recursos[index];
-   if (element.nombre.toLowerCase().indexOf(this.valor.toLowerCase()) > -1) {
+       for (let index = 0; index < this.recursos2.length; index++) {
+   let element = this.recursos2[index];
+
+   if (element.nombre.toLowerCase().indexOf(this.valor.toLowerCase()) >=0) {
      // resultmovie.push(iterator);
-    //  this.recursos.push(element);
+      this.recursos.push(element);
     this.loading=false;
 
 
@@ -51,6 +48,12 @@ export class BuscarComponent implements OnInit {
      this.mensaje = "El termino de busquedad debe ser mayor de 3 caracteres" + this.valor;
    };
  }
+    });
+//     this.loading = false;
+ 
+// //  alert(params['termino']);
+ })
+
   
   }
   filtrar(){
@@ -59,6 +62,7 @@ export class BuscarComponent implements OnInit {
      
       this.exist=false}else{
       for (const iterator of this.recursos2) {
+         this.recursos=[];
       if (iterator.nombre.toLowerCase().indexOf(this.valor.toLowerCase()) > -1) {
         // resultmovie.push(iterator);
         this.recursos.push(iterator);
@@ -75,6 +79,7 @@ export class BuscarComponent implements OnInit {
     return this.recursos;
   }
   abrirdata(id: number) {
+    this.recursos=[];
     this.router.navigate(['/recurso', this.recursos[id]._id]);
 
   }
