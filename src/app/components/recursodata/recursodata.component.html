@@ -17,7 +17,7 @@
 </label>
 
     <div class="blog" *ngIf="loading==false">
-        <div class="conteudo">
+        <div class="conteudo bg-success">
             <div class="post-info" *ngFor="let etiueta of recurso.etiquetas let i=index">
                 <a class="tag" *ngIf="etiueta!==''" [routerLink]="['/tag',etiueta]">
                     {{etiueta}} 
