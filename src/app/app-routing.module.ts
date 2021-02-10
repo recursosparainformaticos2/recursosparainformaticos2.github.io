@@ -17,7 +17,7 @@ import { BuscarComponent } from './components/buscar/buscar.component';
 import { TagComponent } from "./components/tag/tag.component";
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-   { path: 'recursos', component: RecursosComponent,canActivate: [AuthGuard] },
+   { path: 'recursos', component: RecursosComponent },
   { path: 'agregarrecursos', component: AgregarrecursoComponent  ,canActivate: [AuthGuard]},
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },

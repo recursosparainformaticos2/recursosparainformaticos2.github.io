@@ -19,17 +19,19 @@
                 <a class="nav-link" [routerLink]="['/login']">Iniciar Sesion</a>
             </li> -->
             <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/recursos']">Recursos</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/login" routerLinkActive="active">Iniciar  Sesion</a>
                 </li>
+
                 <!-- <li class="nav-item">
                     <a class="nav-link" routerLink="/signup" routerLinkActive="active">SignUp</a>
                 </li> -->
             </ng-container>
             <ng-template #loggedIn>
-                <li class="nav-item" routerLinkActive="active">
-                    <a class="nav-link" [routerLink]="['/recursos']">Recursos</a>
-                </li>
+
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" [routerLink]="['/agregarrecursos']">Administracion</a>
                 </li>
